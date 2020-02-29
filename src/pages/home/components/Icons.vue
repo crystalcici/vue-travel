@@ -80,7 +80,6 @@ export default {
     height: 0
     padding-bottom: 50%
    icons
-     flex: 1
      margin-top: .1rem
     .icon
       position: relative
