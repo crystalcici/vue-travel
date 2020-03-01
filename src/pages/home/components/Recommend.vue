@@ -4,7 +4,7 @@
     热销推荐
     </div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src="item.imgUrl"/>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -19,25 +19,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/2001/f6/f66fb64d494a4d78a3.img.jpg_200x200_005ebaf5.jpg',
-        title: '上海海昌海洋公园',
-        desc: '这里特别受欢迎哟(๑‾ ꇴ ‾๑)'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/2001/f6/f66fb64d494a4d78a3.img.jpg_200x200_005ebaf5.jpg',
-        title: '上海海昌海洋公园',
-        desc: '这里特别受欢迎哟(๑‾ ꇴ ‾๑)'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/2001/f6/f66fb64d494a4d78a3.img.jpg_200x200_005ebaf5.jpg',
-        title: '上海海昌海洋公园',
-        desc: '这里特别受欢迎哟(๑‾ ꇴ ‾๑)'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
