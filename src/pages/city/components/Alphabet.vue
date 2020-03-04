@@ -1,13 +1,14 @@
 <template>
   <ul class="list">
-    <li class="item"
-        v-for="item of letters"
-        :key="item"
-        :ref="item"
-        @touchstart.prevent="handleTouchStart"
-        @touchmove="handleTouchMove"
-        @touchend="handleTouchEnd"
-        @click="handleLetterClick"
+    <li
+      class="item"
+      v-for="item of letters"
+      :key="item"
+      :ref="item"
+      @touchstart.prevent="handleTouchStart"
+      @touchmove="handleTouchMove"
+      @touchend="handleTouchEnd"
+      @click="handleLetterClick"
     >
       {{item}}
     </li>
@@ -54,7 +55,7 @@ export default {
         this.timer = setTimeout(() => {
           const touchY = e.touches[0].clientY - 79
           const index = Math.floor((touchY - this.startY) / 20)
-          if (index >= 0 & index <= this.letters.length) {
+          if (index >= 0 && index < this.letters.length) {
             this.$emit('change', this.letters[index])
           }
         }, 16)
@@ -68,7 +69,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-  @import "~styles/varibles.styl"
+  @import '~styles/varibles.styl'
   .list
     display: flex
     flex-direction: column
@@ -79,7 +80,7 @@ export default {
     bottom: 0
     width: .4rem
     .item
-      text-align: center
       line-height: .4rem
+      text-align: center
       color: $bgColor
 </style>
