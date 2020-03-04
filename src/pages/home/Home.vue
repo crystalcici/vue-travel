@@ -58,8 +58,8 @@ export default {
     this.getHomeInfo()
   },
   activated () {
-    //两次页面的城市不同,重新发ajax请求
-    if (this.lastCity !=== this.city) {
+    // 两次页面的城市不同,重新发ajax请求
+    if (this.lastCity !== this.city) {
       this.lastCity = this.city
       this.getHomeInfo()
     }
