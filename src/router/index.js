@@ -19,6 +19,8 @@ export default new Router({
       path: '/detail/:id',
       name: 'Detail',
       component: Detail
-
-    }]
+    }],
+  scrollBehavior (to, from, savedPosition) {
+    return {x: 0, y: 0} // 进入新页面，始终切换到顶部
+  }
 })
